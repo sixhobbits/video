@@ -7,7 +7,7 @@ import subprocess
 import random
 
        
-UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__)) + "uploads"
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__)) + "\uploads"
 
 def get_title():
 	s = ""
@@ -29,7 +29,7 @@ def download():
     print request.form.get("url")
     link = request.form.get("url")
     title = get_title()
-    download_videos = subprocess.call(['youtube-dl', '-f', '85/84/83/82/38/37/22/18/120/35/34','-o','uploads/' + title  + '.%(ext)s', link])
+    download_videos = subprocess.call(['sudo','youtube-dl', '-f', '85/84/83/82/38/37/22/18/120/35/34','-o','uploads/' + title  + '.%(ext)s', link])
     title += ".mp4"
     return send_from_directory(UPLOAD_FOLDER, title, as_attachment=True)
 
