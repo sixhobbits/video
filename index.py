@@ -9,7 +9,7 @@ import youtube_dl
 
        
 
-UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__)) + "uploads"
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__)) + "/uploads"
 print UPLOAD_FOLDER
 
 
@@ -34,12 +34,12 @@ def download():
     link = request.form.get("url")
     title = get_title()
     try:
-        youtube_dl.main(['-f', '85/84/83/82/38/37/22/18/120/35/34','-o','uploads/' + title  + '.%(ext)s', link])
+        youtube_dl.main(['-f', '85/84/83/82/38/37/22/18/120/35/34','-o',UPLOAD_FOLDER, + title  + '.%(ext)s', link])
     except:
         pass
     title += ".mp4"
     print title
-    return send_from_directory(UPLOAD_FOLDER, title, as_attachment=True)
+    return send_from_directory(UPLOAD_FOLDER,"test.mp4", as_attachment=True)
 
 
 
