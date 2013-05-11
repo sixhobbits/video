@@ -9,7 +9,7 @@ import youtube_dl
 
        
 
-UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__),"uploads")
+UPLOAD_FOLDER = "/var/www/video/uploads"
 print UPLOAD_FOLDER
 
 
@@ -39,7 +39,7 @@ def download():
     except: # messy hack - this triggers each time, but all seems to work ok. if omitted an exception is thrown
         pass
     title += ".mp4"
-    print UPLOAD_FOLDER,title
+    print "garethDebug",UPLOAD_FOLDER,title
     return send_from_directory(UPLOAD_FOLDER, title, as_attachment=True)
 
 
