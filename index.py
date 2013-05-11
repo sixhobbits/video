@@ -35,7 +35,7 @@ def download():
     title = get_title()
     try:
         print os.path.join(UPLOAD_FOLDER,title)
-        youtube_dl.main(['-f', '85/84/83/82/38/37/22/18/120/35/34','-o','uploads/testasdf' + '.%(ext)s', link])
+        youtube_dl.main(['-f', '85/84/83/82/38/37/22/18/120/35/34','-o','/uploads/testasdf' + '.%(ext)s', link])
     except: # messy hack - this triggers each time, but all seems to work ok. if omitted an exception is thrown
         pass
     title += ".mp4"
