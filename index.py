@@ -39,7 +39,7 @@ def download():
         pass
     title += ".mp4"
     print title
-    return send_from_directory(UPLOAD_FOLDER,"test.mp4", as_attachment=True)
+    return send_from_directory(UPLOAD_FOLDER, title, as_attachment=True)
 
 
 
