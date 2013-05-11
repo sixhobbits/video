@@ -5,9 +5,13 @@ import shutil
 import sys
 import subprocess
 import random
+import youtube_dl
 
        
-UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__)) + "\uploads"
+
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__)) + "uploads"
+print UPLOAD_FOLDER
+
 
 def get_title():
 	s = ""
@@ -29,8 +33,12 @@ def download():
     print request.form.get("url")
     link = request.form.get("url")
     title = get_title()
-    download_videos = subprocess.call(['sudo','youtube-dl', '-f', '85/84/83/82/38/37/22/18/120/35/34','-o','uploads/' + title  + '.%(ext)s', link])
+    try:
+        youtube_dl.main(['-f', '85/84/83/82/38/37/22/18/120/35/34','-o','uploads/' + title  + '.%(ext)s', link])
+    except:
+        pass
     title += ".mp4"
+    print title
     return send_from_directory(UPLOAD_FOLDER, title, as_attachment=True)
 
 
