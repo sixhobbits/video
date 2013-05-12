@@ -15,17 +15,23 @@
 		<li> It may look like the page is not responding after you press submit. The video is downloaded completely before being returned as a download, so please be patient if the video is long.</li>
 		<li> The video will be assigned a random name, so unfortunately at this stage you will lose the video's title. </li>
 	</ul>
-<p><b> Input url here, and click on submit <b></p>
+
 <form action = "/download" method="POST">
 	<table>
 		<tr>
-			<td><input type="text" name="url" id="url"></input></td>
+			<td><b>Input video URL:</b></td><td> <input type="text" name="url" id="url"></input></td><td><input type="submit" value="submit" name="submit" id="submit"></td>
 		</tr>
-		<tr> 
-			<td><input type="submit" value="submit" name="submit" id="submit"></td>
-		</tr>
+	</table>
 </form>
 
+Further notes:
+<ul>
+	<li> I like the .mp4 format. If you don't, you'll have to find somewhere else for now. I hope to add more formats soon. </li>
+	<li> Some YouTube videos cannot be downloaded in .mp4 format. These will return an "Unable to Download" message for now. Sorry.</li>
+	<li> By the YouTube ToS, you're not allowed to download their videos. Your responsibilty, not mine </li>
+	<li> Asterix is great. </li>
+</ul>
+<img src="static/asterix2.gif" alt="asterix" style="width:150px; height:250px" />
 </body>
 </html>
 
