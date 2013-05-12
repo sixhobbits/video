@@ -39,8 +39,10 @@ def download():
     except: # messy hack - this triggers each time, but all seems to work ok. if omitted an exception is thrown
         pass
     title += ".mp4"
-    print "garethDebug",UPLOAD_FOLDER,title
-    return send_from_directory(UPLOAD_FOLDER, title, as_attachment=True)
+    try:
+        return send_from_directory(UPLOAD_FOLDER, title, as_attachment=True)
+    except:
+        return render_template("index.html", failed=True)
 
 
 

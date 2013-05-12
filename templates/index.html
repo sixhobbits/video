@@ -1,13 +1,22 @@
 <html>
+<head>
+<title> Video Download </title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico')}}">
+</head>
 <body>
-<title> YouTube </title>
+<h1> Video Downloader 
+{% if failed %}
+	<font color="red"> Sorry, I was unable to download this video </font>
+{% endif %}
 
+</h1>
+<p> KeepVid, YouTubeDownloader, pwnyoutube, and equivalents all require you to install softare, enable Java, or add a Bookmarklet. Which is fine if you're using your home PC. But I wanted something which required nothing, and could be used with any browser, device, and platform. After looking around for a while, I found nothing satisfactory.  Input a video URL in this box, and an an attempt will be made to return an .mp4 file. Supported sites are YouTube, and a few others. </p>
 <form action = "/download" method="POST">
 	<table>
 		<tr>
 			<td><input type="text" name="url" id="url"></input></td>
 		</tr>
-		<tr>
+		<tr> 
 			<td><input type="submit" value="submit" name="submit" id="submit"></td>
 		</tr>
 </form>
