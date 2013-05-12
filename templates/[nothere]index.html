@@ -1,0 +1,47 @@
+<html>
+<head>
+<title> Video Download </title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico')}}">
+</head>
+<body>
+<h1> Video Downloader 
+{% if failed %}
+	<font color="red"> Sorry, I was unable to download this video </font>
+{% endif %}
+
+</h1>
+<p> KeepVid, YouTubeDownloader, pwnyoutube, and equivalents all require you to install softare, enable Java, or add a Bookmarklet. Which is fine if you're using your home PC. But I wanted something which required nothing, and could be used with any browser, device, and platform. After looking around for a while, I found nothing satisfactory.  Input a video URL in this box, and an an attempt will be made to return an .mp4 file. Supported sites are YouTube, and a few others. Please note </p>
+	<ul>
+		<li> It may look like the page is not responding after you press submit. The video is downloaded completely before being returned as a download, so please be patient if the video is long.</li>
+		<li> The video will be assigned a random name, so unfortunately at this stage you will lose the video's title. </li>
+	</ul>
+
+<form action = "/download" method="POST">
+	<table>
+		<tr>
+			<td><b>Input video URL:</b></td><td> <input type="text" name="url" id="url"></input></td><td><input type="submit" value="submit" name="submit" id="submit"></td>
+		</tr>
+	</table>
+</form>
+
+Further notes:
+<ul>
+	<li> I like the .mp4 format. If you don't, you'll have to find somewhere else for now. I hope to add more formats soon. </li>
+	<li> Some YouTube videos cannot be downloaded in .mp4 format. These will return an "Unable to Download" message for now. Sorry.</li>
+	<li> By the YouTube ToS, you're not allowed to download their videos. Your responsibilty, not mine </li>
+	<li> Asterix is great. </li>
+</ul>
+<img src="static/asterix2.gif" alt="asterix" style="width:150px; height:250px" />
+</body>
+</html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40866743-1', 'garethdwyer.co.za');
+  ga('send', 'pageview');
+
+</script>
