@@ -22,9 +22,13 @@ def get_title():
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-@app.route('/gareth', methods=['GET'])
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    print "index()"
+    return render_template('default.html')
+
+@app.route('/gareth', methods=['GET'])
+def video():
     return render_template("index.html")
 
 @app.route('/download', methods=['POST'])
